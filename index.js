@@ -112,6 +112,7 @@ io.on("connection", (socket)=>{
             }
         }
         setTimeout(()=>{
+            if(!rooms[roomIndex]) return
             rooms[roomIndex].started = false
             for(var teamIndex in rooms[roomIndex].teams){
                 if(teamIndex == 0) continue
@@ -234,6 +235,7 @@ io.on("connection", (socket)=>{
         }
 
         var actualQuestionID = rooms[roomIndex].teams[session.team].question
+        console.log(actualQuestionID)
         var rightAnswer = questions[actualQuestionID]
             .toLowerCase()
             .match(/\*.+\*/)[0]
