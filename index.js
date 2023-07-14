@@ -235,7 +235,6 @@ io.on("connection", (socket)=>{
         }
 
         var actualQuestionID = rooms[roomIndex].teams[session.team].question
-        console.log(actualQuestionID)
         var rightAnswer = questions[actualQuestionID]
             .toLowerCase()
             .match(/\*.+\*/)[0]
