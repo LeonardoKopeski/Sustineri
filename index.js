@@ -239,7 +239,8 @@ io.on("connection", (socket)=>{
         var rightAnswer = questions[actualQuestionID]
             .toLowerCase()
             .match(/\*.+\*/)[0]
-            .replaceAll("*", "")
+            .replace("*", "")
+            .replace("*", "")
             .normalize('NFD')
             .replace(/[\u0300-\u036f]/g, "")
         var sentAnswer = answer
